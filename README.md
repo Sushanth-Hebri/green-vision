@@ -2,7 +2,7 @@
 
 ![Green Vision](home.png)
 
-Green Vision is a web application that [briefly describe the purpose of your project]. 
+
 
 ## Demo
 
