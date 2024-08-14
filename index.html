@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green Vision</title>
-     <link rel="icon" href="green-vision-icon.png" sizes="16x16" type="image/png">
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@500&display=swap" rel="stylesheet">
     <script src="https://assets.codepen.io/16327/gsap-latest-beta.min.js?v=3.10.1a"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -64,11 +63,42 @@
             align-items: center;
         }
         .thirdslide{
-           
-            height: 90vh;
+           display: flex;
+            height: 100vh;
             width: 100%;
             background-color: #090909;
             font-family: 'Clash Display', sans-serif;
+        }
+        .third-left{
+            height: 100vh;
+            width: 60%;
+           
+            text-align: center;
+
+        }
+        .third-right{
+            height: 100vh;
+            width: 40%;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .iphone{
+     
+            height: 80%;
+            width: 50%;
+            object-fit: cover;
+        }
+        .iphone:hover
+{
+    transform: scale(1.1);
+  
+    transition: 0.4s ease-in-out;
+}        .iphone img{
+            height: 100%;
+            width: 100%;
         }
         .aboutslide{
            
@@ -500,6 +530,7 @@ font-size: 20px;}
     font-size: 1.5em; /* Large size for side headings */
     color: #2196F3; /* Trendy blue color */
     margin-bottom: 10px; /* Space below the heading */
+    padding: 10px;
 }
 
 p, ul {
@@ -634,6 +665,7 @@ a {
 <body>
     
     <div class="menu-icon" id="menuIcon">&#9776;</div>
+    
     <div class="overlay" id="overlay">
         <div class="dot-parent">
             <div class="dot-container" id="dot-container"></div>
@@ -722,8 +754,9 @@ a {
         </div>
     </div>
    </div>
+
    <div class="thirdslide" id="api">
-    <div class="content-container">
+    <!-- <div class="content-container">
         <h2 class="main-heading">Green Vision API</h2>
         <p>The Green Vision API provides an easy way to access data about greenery in your area. By leveraging the power of location data, you can visualize and analyze the percentage of greenery around any given location.</p>
         
@@ -745,6 +778,32 @@ const imageUrl = `${serverUrl}/detect_greenery?latitude=${latitude}&longitude=${
             <li><strong>Mobile Applications:</strong> Integrate the API into apps to find greener areas.</li>
             <li><strong>Education:</strong> Educate communities about the importance of greenery.</li>
         </ul>
+    </div> -->
+    <div class="third-left">
+        <h2 class="main-heading">Green Vision API</h2>
+        <p>The Green Vision API provides an easy way to access data about greenery in your area. By leveraging the power of location data, you can visualize and analyze the percentage of greenery around any given location.</p>
+        <h3 class="side-heading">API Endpoint</h3>
+        <p>You can access the Green Vision API at the following endpoint:</p>
+        <code>https://sushanthh2.pythonanywhere.com/detect_greenery</code>
+        
+        <h3 class="side-heading">Usage</h3>
+        <p>To use the API, send a request with the latitude and longitude of the location you want to analyze:</p>
+    <code>
+const serverUrl = 'https://sushanthh2.pythonanywhere.com';
+const imageUrl = `${serverUrl}/detect_greenery?latitude=${latitude}&longitude=${longitude}`;
+        </code>
+        <h3 class="side-heading">Applications</h3>
+        <ul>
+            <li><strong>Urban Planning:</strong> Help city planners assess greenery in urban areas.</li>
+            <li><strong>Environmental Research:</strong> Analyze the impact of greenery on urban environments.</li>
+            <li><strong>Mobile Applications:</strong> Integrate the API into apps to find greener areas.</li>
+            <li><strong>Education:</strong> Educate communities about the importance of greenery.</li>
+        </ul>
+    </div>
+    <div class="third-right">
+        <div class="iphone">
+            <img src="iphone-app.png" alt="">
+        </div>
     </div>
 </div>
 
@@ -1106,7 +1165,6 @@ setInterval(createRandomDot, 1000);
 
 
     </script>
-        <script src="ipscript.js"></script>
-
+    <script src="ipscript.js"></script>
 </body>
 </html>
